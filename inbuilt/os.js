@@ -14,3 +14,13 @@ console.log(os.uptime())
 // 13319.14 sec system is up n running.
 
 
+// console.log(os.hostname());
+// console.log(os.type());
+// console.log(os.release());
+// console.log(os.totalmem());
+// console.log(os.userInfo());
+// console.log(os.homedir());
+// console.log(os.networkInterfaces());
+// console.log(os.tmpdir());
+// console.log(os.version());
+// console.log(os.loadavg());

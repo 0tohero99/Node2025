@@ -128,12 +128,17 @@ package.json:
     >it contain script(start,test)
     >all the packages 
 
+ 
 //step to generate package.json
     NodejS must be installed in laptop
     > go inside the folder using cmd/terminal
     > type npm init
     > answer all questions
     > type YES
+
+create automatically package.json if dont want to answer any que. 
+    npm init -you
+
 
 3 types of dependancies:
     local dep : local to the folder.
@@ -194,3 +199,57 @@ apis : it is a url that consists the json format of data .
 rest apis bcz : here every req. act like a new req . 
 
 Static apis : That will not interect with the database .
+
+http :handling the routw is v difficult so we should work with express it helps to create the route very easiyly. 
+
+nodemon :it aotomatically detect the chnage and restart server . bcz everytime we make change in the file to see the resullt we have to stop start the server . 
+
+install it globally :it will be there in the laptop it can be used by any aplications.
+    #install : 
+    cmd as admin
+    npm i -g nodemon
+
+"scripts": {
+    "start": "node http.js",
+    "dev": "nodemon http.js"
+ },
+ #Run: 
+    npm run dev 
+ 
+    -----------fullstack----------------
+create aplications :
+    create folder
+    npm init -y
+    npm i express
+    .gitignore
+    readme.md
+
+
+CRUD
+Create Read Update Delete
+
+Post   Get  Put    Delete
+
+Post> insert data in database
+Get > Retrive the data
+Put/Patch > Update the records
+Delete > Remove
+
+ जब GET रिक्वेस्ट आती है, तो सर्वर से कहा जाता है:
+   "डेटा को पढ़ो और भेजो।"
+🔹 POST: "नया डेटा जोड़ो।"
+🔹 PUT/PATCH: "मौजूदा डेटा अपडेट करो।"
+🔹 DELETE: "डेटा हटाओ।"
+res.send() का मतलब है – "सर्वर से क्लाइंट (यूज़र) को जवाब भेजना"।
+req का मतलब है – "क्लाइंट (यूज़र) से सर्वर को भेजी गई रिक्वेस्ट"।
+
+
+var a = 10
+var b = "My Age is "+a
+"My Age is 10"
+
+//es6
+var a = 10
+var b = `My age is ${a}`
+"My Age is 10"
+
