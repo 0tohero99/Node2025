@@ -1,0 +1,196 @@
+https://code.visualstudio.com/   > Install
+https://nodejs.org/en > Install
+https://git-scm.com/downloads > Install
+https://github.com/ > SignUp
+https://github.com/Aakashdeveloper > Follow
+
+vscode extension
+>vscode-icons
+
+
+JavaScript
+ifelse,function,object,JSON,variables,Array
+
+
+===================Day_1======================
+https://endoflife.date/ 
+Always install even version no (i.e. LTS)
+odd version no is BETA version .
+https://survey.stackoverflow.co/2024/technology/
+
+  M     E       R    N     Stack .
+Mongo Express React Node  .
+    Express.js is a fast, flexible, web framework for Node.js that helps in building backend APIs and servers.
+
+        What does Express.js do?
+            Creates Web Servers – Helps run a website or backend service.
+            Handles Routes – Decides what to do when users visit different URLs (like /home or /about).
+            Uses Middleware – Processes user requests before sending a response.
+            Builds APIs – Helps create RESTful APIs for apps and websites.
+            Connects to Databases – Works with databases like MongoDB and MySQL.
+
+Nodejs : A tool to run JavaScript on a server .
+
+    Single-Threaded : Works with one main thread (e.g., like a single waiter handling many tables).
+
+    Asyncronous : Starts a task and moves to the next without waiting (e.g., ordering food and doing other work while it cooks).
+
+    Non-Blocking I/O: Handles multiple tasks at once without stopping (e.g., a chef cooking many dishes at the same time).
+
+
+Single-Threaded ( Runs One Line of Code at a Time )
+        It runs all tasks using one main thread. It executes one line of code at a time.
+
+Example:
+    console.log("Step 1");
+    console.log("Step 2");
+    console.log("Step 3");
+Output:
+    Step 1  
+    Step 2  
+    Step 3  
+It runs one after another without creating extra threads.
+
+> Asyncronous :
+It doesn’t wait for long-running tasks (like file reading or API calls).
+It moves to the next task and handles the result later when it's ready. 
+
+Example :
+    console.log("Start");
+
+    setTimeout(() => {
+    console.log("Done!");
+    }, 3000);
+
+    console.log("Keep Going...");
+
+Output:
+    Start  
+    Keep Going...  
+    Done! (after 3 seconds)
+      
+🔹 The program doesn't wait for setTimeout.
+🔹 It keeps running other code.
+🔹 "Done!" appears after 3 seconds when it's ready.
+
+> Non-Blocking I/O (Processes Data Without Waiting)
+When It performs time-consuming tasks (like reading a file), it doesn't block the rest of the program.
+
+Example (Real Life)
+    🍔 You order a burger at a restaurant. Instead of waiting at the counter, you find a seat and use your phone.
+    When the burger is ready, the waiter brings it to you.
+
+    This is Non-Blocking I/O – no waiting, just efficiency
+
+Code Example (Same Concept)
+
+    const fs = require("fs");
+
+    console.log("Reading file...");
+
+    fs.readFile("test.txt", "utf8", (err, data) => {
+    console.log("File content:", data);
+    });
+
+    console.log("Doing other work...");
+Output:
+
+    Reading file...  
+    Doing other work...  
+    File content: (file data)  
+
+✅ It doesn’t wait for the file to load.
+✅ It keeps doing other work.
+✅ When the file is ready, it prints the content.
+
+NPM : Node Pakages Manager : is a registary that helps in installing, updating, and managing JavaScript packages.
+
+Pakages: are the suporting library.
+
+JSON : format to represent the data .
+    > JavaScript Object Notation : Array of obzect .
+        [
+             {
+                name:"Hero",
+                type:"Romantic",
+                ind:"Bollywood"
+             },
+             {
+                name:"Jab We Met",
+                type:"Romantic",
+                ind:"Bollywood"
+             }
+        ]
+    
+package.json:
+    >this is the entry point to the app
+    >it contain metadata(version,description,name package)
+    >it contain script(start,test)
+    >all the packages 
+
+//step to generate package.json
+    NodejS must be installed in laptop
+    > go inside the folder using cmd/terminal
+    > type npm init
+    > answer all questions
+    > type YES
+
+3 types of dependancies:
+    local dep : local to the folder.
+        npm i pakagename 
+global :
+dev :
+
+===================Day_2======================
+cd %UserProfile%\Desktop
+पहले यह चेक करें कि कौन-कौन से प्रोसेस TCP और UDP पोर्ट्स पर रन कर रहे हैं:
+netstat -ano
+अगर आपको सिर्फ TCP कनेक्शन्स देखने हैं, तो:
+netstat -ano | findstr LISTENING
+अगर आपको UDP कनेक्शन्स देखने हैं, तो:
+netstat -ano | findstr UDP
+सभी TCP और UDP प्रोसेस को एक साथ बंद करें (CMD से)
+for /f "tokens=5" %a in ('netstat -ano ^| findstr LISTENING') do taskkill /PID %a /F
+सभी UDP प्रोसेस को बंद करने के लिए यह कमांड चलाएं:
+for /f "tokens=5" %a in ('netstat -ano ^| findstr UDP') do taskkill /PID %a /F
+1️⃣ यह जांचें कि कोई भी Node.js सर्वर रन हो रहा है या नहीं:
+tasklist | findstr node
+🔹 अगर कुछ भी नहीं दिखता, तो इसका मतलब है कि कोई भी Node.js सर्वर इस समय रन नहीं कर रहा।
+
+1️⃣ Task Manager खोलें
+🔹 Ctrl + Shift + Esc दबाएं
+🔹 Ctrl + Alt + Delete दबाएं और Task Manager चुनें
+
+2️⃣ Processes टैब पर जाएं
+🔹 अगर Task Manager Compact Mode में खुला है, तो "More details" पर क्लिक करें।
+
+🔹 "Node.js", "node.exe", "Apache", "MongoDB", "MySQL" या आपके चल रहे सर्वर का नाम देखें।
+🔹 कभी-कभी node.exe या java.exe जैसे नाम से भी हो सकता है।
+
+4️⃣ सर्वर को बंद करें (Kill Process)
+🔹 सर्वर वाले प्रोसेस पर राइट-क्लिक करें
+🔹 "End Task" पर क्लिक करें
+
+5️⃣ सुनिश्चित करें कि सर्वर बंद हो गया है
+🔹 फिर से CMD में netstat -ano | findstr :9800 चलाएं और चेक करें कि पोर्ट फ्री हो गया या नहीं।
+
+Step 1: पहले सभी एक्टिव पोर्ट्स देखें
+netstat -ano
+जिस पोर्ट को बंद करना है, उसका PID निकालें
+अगर आपको किसी खास पोर्ट (जैसे 9800) पर रन हो रहे प्रोसेस को बंद करना है, तो चलाएं:
+netstat -ano | findstr :9800
+Step 3: उस PID को बंद करें
+taskkill /PID 1234 /F
+🔹 यहां 1234 को अपने PID से बदलें।
+wmic process where "ProcessId=1234" delete
+
+==============================================
+
+dev dependancies : 
+    Those we require only at the time of development .
+    npm i 
+
+apis : it is a url that consists the json format of data . 
+rest apis bcz : here every req. act like a new req . 
+
+Static apis : That will not interect with the database .
