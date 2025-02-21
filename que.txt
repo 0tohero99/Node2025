@@ -1,0 +1,52 @@
+app.get('/category', (req, res) => {
+    res.send(`<h1>Hello fom category pages. </h1>`);
+    res.end();
+})
+
+app.get('/category/details', (req, res) => {
+    res.send(`<h1>Hello fom category details pages. </h1>`);
+    res.end();
+})
+
+
+// why can we try /category & /category/details routing.
+
+
+let express = require('express');
+let fs = require('fs');
+
+let app = express();
+let port = 7000;
+
+let categoryRouter = express.Router();
+let productRouter = express.Router();
+
+let countryRouter = express.Router();
+
+app.get('/', (req, res) => {
+    res.send(`<h1>Hello fom express. </h1>`);
+    // res.end();
+})
+
+categoryRouter.route("/country")
+    .get((req, res) => {
+        res.send(`<h1>country page route. </h1>`);
+        // res.end();
+    })
+categoryRouter.route("/state")
+    .get((req, res) => {
+        res.send(`<h1>Category page route. </h1>`);
+        // res.end();
+    })
+categoryRouter.route("/city")
+    .get((req, res) => {
+        res.send(`<h1>city page route. </h1>`);
+        // res.end();
+    })
+
+app.use("/country", categoryRouter);
+ 
+app.listen(port, (err) => {
+    if (err) throw err;
+    console.log(`Server is running on port ${port}`);
+})
